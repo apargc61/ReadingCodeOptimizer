@@ -1,0 +1,64 @@
+libraries to use
+first format the project using the cookiecutter
+twine , then use twine to upload to the pypi / remember to have __init__() on each folder to ensure packing
+
+python setup.py sdist bdist_wheel
+pip install twine
+twine upload dist/* or twine upload dist/<package-file>
+
+internal libraru: twine upload --repository-url <repository-url> dist/*
+
+
+
+
+to increase version o changes change int in setup py and push
+
+To update your existing package on PyPI (Python Package Index), you need to follow these steps:
+
+
+
+Once twine is installed, run the following command to upload the distribution packages to Artifactory:
+
+css
+Copy code
+twine upload --repository-url <repository-url> dist/*
+Replace <repository-url> with the URL of your Artifactory repository. This command uploads all the distribution packages in the dist directory to the specified repository.
+
+Verify Library in Artifactory: Navigate to your Artifactory repository and verify that your library package is available. You should be able to see the uploaded distribution files (.tar.gz and .whl) in the repository.
+
+Increment Version Number: Update the version number of your package in the setup.py file. Change the version field to a higher version number, such as from 1.0.0 to 1.0.1. This ensures that PyPI recognizes the new version as an update to the existing package.
+
+To push your Python library to PyPI (Python Package Index), you need to follow a series of steps. Here's an outline of the process:
+
+Ensure your Library is Ready: Make sure your library is fully developed, tested, and documented.
+
+Package your Library: Create a distribution package for your library. You can use setuptools to define the necessary metadata and dependencies. Typically, you'll create either a source distribution (.tar.gz file) or a wheel distribution (.whl file). Run the following command in the root directory of your library:
+
+arduino
+Copy code
+python setup.py sdist bdist_wheel
+Register on PyPI: If you haven't already, create an account on PyPI (https://pypi.org/) and set up your username and password.
+
+Install twine: Twine is a utility for securely uploading packages to PyPI. Install it using pip by running the following command:
+
+Copy code
+pip install twine
+Upload the Distribution Package: Use twine to upload your distribution package to PyPI. Run the following command, replacing <package-file> with the path to your distribution package (either .tar.gz or .whl file):
+
+go
+Copy code
+twine upload dist/<package-file>
+Twine will prompt you to enter your PyPI username and password. Once authenticated, it will upload your package to PyPI.
+
+Verify the Upload: Visit your package page on PyPI to ensure the upload was successful. You should be able to see your library listed with the package version and other details.
+
+Install and Test: To verify that your library can be installed from PyPI, use pip to install it in a new environment:
+
+php
+Copy code
+pip install <your-library-name>
+Test your library's functionality and ensure that it works as expected.
+
+Publish Updates: Whenever you make changes or updates to your library, increment the version number in your setup.py file and repeat steps 2-5 to package and upload the new version to PyPI.
+
+It's important to note that publishing libraries to PyPI requires following best practices, such as providing clear documentation, adhering to versioning conventions, and maintaining high-quality code. Additionally, it's recommended to thoroughly test your library and ensure it meets the requirements and expectations of potential users.

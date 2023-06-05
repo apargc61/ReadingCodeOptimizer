@@ -1,0 +1,8 @@
+Flake8 to analyze your Python code and identify potential issues and style violations:
+
+flake8 myfile.py
+flake8 file1.py file2.py
+
+Checking an entire directory:
+flake8 myproject/
+flake8 myproject/ --output-file=flake8_report.txt

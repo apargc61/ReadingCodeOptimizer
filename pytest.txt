@@ -1,0 +1,18 @@
+Organize your test files: Create a directory in your project structure to store your test files. By convention, this directory is usually named tests. Within the tests directory, create individual test files with names that begin with test_. For example, test_my_module.py.
+
+Write test functions: In each test file, write test functions that check the behavior of different parts of your code. Each test function should have a name starting with test_. For example:
+
+python
+Copy code
+# test_my_module.py
+
+def test_addition():
+    assert 2 + 2 == 4
+
+def test_subtraction():
+    assert 5 - 3 == 2
+Run pytest: Open a terminal or command prompt, navigate to the root directory of your project, and run the following command:
+
+Copy code
+pytest
+pytest will automatically discover and execute all the test functions in the tests directory.

@@ -1,0 +1,18 @@
+Here's an example of how you can use mypy and pylint for static type checking and code analysis in Python:
+
+pip install mypy pylint
+
+def greet(name: str) -> str:
+    return f"Hello, {name}!"
+
+def main():
+    name = "Alice"
+    greeting = greet(name)
+    print(greeting)
+
+if __name__ == "__main__":
+    main()
+
+# code checking 
+mypy example.py
+pylint example.py
